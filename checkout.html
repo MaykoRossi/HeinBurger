@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000000;
+            display: flex;
+            flex-direction: column; /* Alterado para coluna para o header ficar acima do container */
+            justify-content: flex-start; /* Alinha o conteúdo ao topo */
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        header {
+            width: 100%;
+            text-align: center; /* Centraliza a imagem no header */
+            margin-bottom: 20px; /* Adiciona espaço abaixo do header */
+        }
+        header img {
+            max-width: 20rem; /* Tamanho máximo da imagem para desktop */
+            height: auto;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        footer h2 {
+            color: azure;
+            text-align: center;
+            justify-content: center;
+
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        p {
+            font-weight: bold;
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input, select {
+            width: calc(100% - 16px);
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 15px;
+            background: #d35400;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #e67e22;
+        }
+        .oculto {
+            display: none;
+            text-align: center;
+            color: green;
+            font-size: 18px;
+            margin-top: 15px;
+        }
+
+        /* Responsividade para dispositivos móveis */
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            header img {
+                max-width: 150px; /* Reduz o tamanho da imagem para telas menores */
+            }
+            .container {
+                width: 95%;
+                margin: 5px auto;
+            }
+        }
+
+        /* Correção para navegadores antigos (IE 8 e anteriores) */
+        @media \0screen {
+            body {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#"><img src="imgs/logo-site.png" alt="Logo do Restaurante"></a>
+    </header>
+    <div class="container">
+        <h1>Finalizar Compra</h1>
+        <ul id="resumo-pedido"></ul>
+        <p id="total"></p>
+        <form id="form-checkout">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" required>
+            
+            <label for="endereco">Endereço:</label>
+            <input type="text" id="endereco" required>
+            
+            <label for="pagamento">Forma de pagamento:</label>
+            <select id="pagamento" required>
+                <option value="">Selecione</option>
+                <option value="cartao">Cartão de Crédito</option>
+                <option value="boleto">Boleto Bancário</option>
+                <option value="pix">PIX</option>
+            </select>
+            
+            <button type="submit">Confirmar Compra</button>
+        </form>
+        <p id="mensagem-confirmacao" class="oculto"></p>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const resumoPedido = document.getElementById("resumo-pedido");
+            const totalElemento = document.getElementById("total");
+            const formCheckout = document.getElementById("form-checkout");
+            const mensagemConfirmacao = document.getElementById("mensagem-confirmacao");
+            
+            let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+            
+            function exibirResumoPedido() {
+                resumoPedido.innerHTML = "";
+                let total = 0;
+                carrinho.forEach(item => {
+                    let li = document.createElement("li");
+                    li.textContent = `${item.nome} - R$ ${item.preco.toFixed(2)}`;
+                    resumoPedido.appendChild(li);
+                    total += item.preco;
+                });
+                totalElemento.textContent = `Total: R$ ${total.toFixed(2)}`;
+            }
+            
+            exibirResumoPedido();
+            
+            formCheckout.addEventListener("submit", (event) => {
+                event.preventDefault();
+                
+                const nome = document.getElementById("nome").value;
+                const endereco = document.getElementById("endereco").value;
+                const pagamento = document.getElementById("pagamento").value;
+                
+                if (!nome || !endereco || !pagamento) {
+                    alert("Preencha todos os campos para finalizar a compra.");
+                    return;
+                }
+                
+                mensagemConfirmacao.textContent = `Obrigado, ${nome}! Seu pedido foi confirmado. O tempo estimado de entrega é de 40 minutos.`;
+                mensagemConfirmacao.classList.remove("oculto");
+                
+                localStorage.removeItem("carrinho");
+                formCheckout.reset();
+            });
+        });
+    </script>
+<footer>
+    <h2>Obrigado pela preferência. </br>Esperamos você novamente !</h2>
+</footer>
+</body>
+</html>

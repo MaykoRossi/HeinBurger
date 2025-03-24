@@ -1,0 +1,253 @@
+/* // Atualização do CSS com ajustes finais, incluindo menu cascata para mobile */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #242323; /* Tom de cinza escuro, semelhante ao Outback */
+    background-image: url(imgs/bg.png);
+    background-size: cover; /* Garante que a imagem cubra todo o fundo */
+    background-repeat: no-repeat; /* Impede a repetição da imagem */
+    background-attachment: fixed; /* Mantém a imagem fixa enquanto a página é rolada */
+    color: #F5DEB3; /* Tom de bege para o texto */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #000000; /* Tom amadeirado */
+    padding: 15px;
+    width: 100%;
+}
+
+header img {
+    height: 100px;
+    margin-left: 20px;
+    padding: 0px;
+}
+
+nav {
+    position: relative;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    background-color: #000000; /* Marrom médio */
+}
+
+nav ul li {
+    margin: 0 15px;
+    position: relative;
+    color: #FFFFFF;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #FFD700;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #FFFFFF;
+}
+
+/* Menu responsivo em cascata para dispositivos móveis */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        background-color: #5C3D2E;
+        width: 100%;
+        left: 0;
+        top: 40px;
+    }
+    
+    nav ul.active {
+        display: flex;
+    }
+    
+    .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        color: #FFD700;
+        font-size: 24px;
+        cursor: pointer;
+        padding: 10px;
+    }
+}
+
+@media (min-width: 769px) {
+    .menu-toggle {
+        display: none;
+    }
+}
+
+
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+.produto {
+    display: inline-block;
+    background-color: #000000; /* Tom amadeirado */
+    padding: 20px;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.produto:hover {
+    transform: scale(1.05);
+    background-color: #8B5A2B; /* Destaca ao passar o mouse */
+}
+
+button {
+    background-color: #C04000; /* Vermelho queimado */
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #A52A2A; /* Vermelho mais escuro */
+}
+
+#voltar-topo {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #C04000;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* CARRINHO DE COMPRAS */
+
+@media (min-width: 769px) {
+    #carrinho {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #686868;
+        color: white;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+        display: block;
+    }
+
+    #carrinho-btn {
+        display: none; /* Oculta o botão no desktop */
+    }
+}
+
+/* Estilos para Dispositivos Móveis */
+@media (max-width: 768px) {
+    #carrinho {
+        display: none; /* Oculta o carrinho fixo */
+    }
+
+    /* Botão flutuante do carrinho */
+    #carrinho-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #FFD700;
+        color: #5C3D2E;
+        border: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+    }
+
+    /* Carrinho flutuante ao clicar no botão */
+    #carrinho-flutuante {
+        display: none;
+        position: fixed;
+        bottom: 80px;
+        right: 20px;
+        background-color: #5C3D2E;
+        color: white;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+        width: 250px;
+    }
+}
+
+/* Botão do carrinho flutuante - apenas para dispositivos móveis */
+#carrinho-btn {
+    display: none; /* Oculto inicialmente */
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #5C3D2E;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 1000;
+    opacity: 0; /* Inicia invisível */
+    transition: opacity 0.3s ease-in-out; /* Efeito suave ao aparecer/desaparecer */
+}
+
+/* Exibe o botão quando a classe "mostrar" é adicionada via JavaScript */
+#carrinho-btn.mostrar {
+    opacity: 1;
+}
+
+/* Estilização do carrinho flutuante */
+#carrinho-flutuante {
+    display: none; /* Oculto por padrão */
+    position: fixed;
+    bottom: 70px;
+    left: 10px;
+    width: 250px;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+/* Ajustes para dispositivos móveis */
+@media (max-width: 768px) {
+    #carrinho-btn {
+        display: flex; /* Exibe o botão apenas no mobile */
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+footer {
+    background-color: #000000; /* Tom amadeirado */
+    color: #FFD700;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}

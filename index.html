@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce de Alimentos</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <a href="#"><img src="imgs/logo-site.png" alt="Logo do Restaurante"></a>
+        <button class="menu-toggle">☰</button>
+        <nav>
+            <ul>
+                <li><a href="#hamburgers">Hambúrgueres</a></li>
+                <li><a href="#pizzas">Pizzas</a></li>
+                <li><a href="#sobremesas">Sobremesas</a></li>
+                <li><a href="#bebidas">Bebidas</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+
+        <!-- HAMBURGERS -->
+        <section id="hamburgers">
+            <h2>Hambúrgueres</h2>
+            <div class="produto" data-nome="Classic Burger" data-preco="25">
+                <img src="imgs/classicburger.png" width="300" height="300" alt="Classic Burger">
+                <h3>Classic Burger</h3>
+                <p>Pão brioche, carne angus, queijo cheddar, alface e tomate.</p>
+                <p>R$ 25,00</p>
+                <button class="add-carrinho">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto" data-nome="Smoky BBQ" data-preco="30">
+                <img src="imgs/smokybbq.png" width="300" height="300" alt="Smoky BBQ">
+                <h3>Smoky BBQ</h3>
+                <p>Pão australiano, carne defumada, queijo, bacon e molho barbecue.</p>
+                <p>R$ 30,00</p>
+                <button class="add-carrinho">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto" data-nome="Trufado Burger" data-preco="35">
+                <img src="imgs/trufado.png" width="300" height="300" alt="Trufado Burger">
+                <h3>Trufado Burger</h3>
+                <p>Pão brioche, carne angus, cebola caramelizada, queijo suíço derretido e maionese de trufas.</p>
+                <p>R$ 35,00</p>
+                <button class="add-carrinho">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto" data-nome="Hambúrguer de Frango Crocante" data-preco="35">
+                <img src="imgs/frangocrocante.png" width="300" height="300" alt="Hambúrguer de Frango Crocante">
+                <h3>Hambúrguer de Frango Crocante</h3>
+                <p>Pão australiano, frango crocante, guacamole, tomate e molho balsâmico.</p>
+                <p>R$ 35,00</p>
+                <button class="add-carrinho">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto" data-nome="Hambúrguer de Cogumelos" data-preco="42">
+                <img src="imgs/cogumeloburger.png" width="300" height="300" alt="Hambúrguer de Cogumelos">
+                <h3>Mushroom Burger</h3>
+                <p>Pão brioche, cogumelo portobello grelhado, pimentão vermelho assado, cebola caramelizada e molho balsâmico.</p>
+                <p>R$ 42,00</p>
+                <button class="add-carrinho">Adicionar ao Carrinho</button>
+            </div>
+        </section>
+
+        <!-- PIZZAS -->
+        <section id="pizzas">
+            <h2>Pizzas</h2>
+            <div class="produto" data-nome="Margherita" data-preco="40">
+                <img src="imgs/pizzas/margherita.png" width="300" height="300" alt="Margherita">
+                <h3>Margherita</h3>
+                <p>Molho de tomate, mussarela de búfala, manjericão fresco.</p>
+                <p>R$ 40,00</p>
+                <button class="add-carrinho">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto" data-nome="Pizza Pepperoni" data-preco="44">
+                <img src="imgs/pizzas/pepperoni.png" width="300" height="300" alt="Pizza Pepperoni">
+                <h3>Pepperoni</h3>
+                <p>Uma pizza popular com molho de tomate, mussarela fresca e fatias de pepperoni.</p>
+                <p>R$ 40,00</p>
+                <button class="add-carrinho">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto" data-nome="Pizza Pesto" data-preco="50">
+                <img src="imgs/pizzas/pesto.png" width="300" height="300" alt="Pizza Pesto">
+                <h3>Pesto</h3>
+                <p>Uma pizza refrescante com pesto, mussarela fresca, pimentões assados e rúcula.</p>
+                <p>R$ 50,00</p>
+                <button class="add-carrinho">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto" data-nome="Pizza Frango Barbecue" data-preco="57">
+                <img src="imgs/pizzas/frangobbq.png" width="300" height="300" alt="Pizza Frango Barbecue">
+                <h3>Frango Barbecue</h3>
+                <p>Uma pizza saborosa com molho barbecue, frango grelhado, cebola caramelizada e queijo gorgonzola.</p>
+                <p>R$ 57,00</p>
+                <button class="add-carrinho">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto" data-nome="Pizza Funghi" data-preco="57">
+                <img src="imgs/pizzas/funghi.png" width="300" height="300" alt="Pizza Funghi">
+                <h3>Pizza Funghi</h3>
+                <p>Uma pizza vegetariana com molho de tomate, mussarela fresca, cogumelos, azeitonas e alcachofras.</p>
+                <p>R$ 57,00</p>
+                <button class="add-carrinho">Adicionar ao Carrinho</button>
+            </div>
+        </section>
+
+        <!-- SOBREMESAS -->
+        <section id="sobremesas">
+            <h2>Sobremesas</h2>
+            <div class="produto" data-nome="Bolo de Lava de Chocolate" data-preco="18">
+                <img src="imgs/sobremesas/lavadechocolate.png" width="300" height="300" alt="Bolo de Lava de Chocolate">
+                <h3>Bolo de Lava de Chocolate</h3>
+                <p>Um bolo de chocolate com um recheio cremoso e quente de chocolate derretido, </br>servido com uma bola de sorvete de creme.</p>
+                <p>R$ 18,00</p>
+                <button class="add-carrinho">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto" data-nome="Cheesecake de Frutas Vermelhas" data-preco="18">
+                <img src="imgs/sobremesas/cheesecakefrutasvermelhas.png" width="300" height="300" alt="Cheesecake de Frutas Vermelhas">
+                <h3>Cheesecake de Frutas Vermelhas</h3>
+                <p>Uma base de biscoito recheada com um creme de queijo cremoso </br>e coberta com frutas vermelhas frescas.</p>
+                <p>R$ 22,00</p>
+                <button class="add-carrinho">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto" data-nome="Tiramisú" data-preco="18">
+                <img src="imgs/sobremesas/tiramisu.png" width="300" height="300" alt="Tiramisú">
+                <h3>Tiramisú</h3>
+                <p>Um clássico italiano feito com biscoitos ladyfingers embebidos em café, </br>camadas de queijo mascarpone e cacau em pó.</p>
+                <p>R$ 26,00</p>
+                <button class="add-carrinho">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto" data-nome="Salada de Frutas" data-preco="18">
+                <img src="imgs/sobremesas/saladadefritas.png" width="300" height="300" alt="Salada de Frutas">
+                <h3>Salada de Frutas</h3>
+                <p>Uma mistura refrescante de frutas frescas, como morangos, mirtilos, </br>framboesas e amoras, servida com chantilly.</p>
+                <p>R$ 15,00</p>
+                <button class="add-carrinho">Adicionar ao Carrinho</button>
+            </div>
+        </section>
+
+        <!-- BEBIDAS -->
+        <section id="bebidas">
+            <h2>Bebidas</h2>
+            <div class="produto" data-nome="Suco Natural" data-preco="12">
+                <img src="imgs/bebidas/suconatural.png" width="300" height="300" alt="Suco Natural">
+                <h3>Suco Natural</h3>
+                <p>Suco de laranja, morango ou maracujá.</p>
+                <p>R$ 12,00</p>
+                <button class="add-carrinho">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto" data-nome="Coca-Cola" data-preco="12">
+                <img src="imgs/bebidas/coca.png" width="300" height="300" alt="Coca-Cola">
+                <h3>Coca-Cola</h3>
+                <p>Refrigerante Coca-Cola em lata.</p>
+                <p>R$ 12,00</p>
+                <button class="add-carrinho">Adicionar ao Carrinho</button>
+            </div>
+        </section>
+        <div id="carrinho">
+            <h2>Carrinho de Compras</h2>
+            <ul id="itens-carrinho"></ul>
+            <p id="total">Total: R$ 0,00</p>
+            <button id="finalizar-compra">Finalizar Compra</button>
+            <button id="esvaziar-carrinho">Esvaziar Carrinho</button>
+        </div>
+
+        <!-- Botão de carrinho flutuante -->
+<button id="carrinho-btn">🛒</button>
+
+<!-- Carrinho flutuante -->
+<div id="carrinho-flutuante">
+    <h3>Seu Carrinho</h3>
+    <ul id="itens-carrinho-flutuante"></ul>
+    <p id="total-flutuante">Total: R$ 0,00</p>
+    <button id="fechar-carrinho">Fechar</button>
+</div>
+
+    </main>
+    <footer>
+        <p>&copy; 2025 HeinBurger. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
