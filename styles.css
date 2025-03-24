@@ -3,7 +3,7 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #242323; /* Tom de cinza escuro, semelhante ao Outback */
-    background-image: url(imgs/bg.png);
+    /* background-image: url(imgs/bg.png); */
     background-size: cover; /* Garante que a imagem cubra todo o fundo */
     background-repeat: no-repeat; /* Impede a repetição da imagem */
     background-attachment: fixed; /* Mantém a imagem fixa enquanto a página é rolada */
@@ -46,12 +46,12 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #FFD700;
+    color: #ffffff;
     font-weight: bold;
 }
 
 nav ul li a:hover {
-    color: #FFFFFF;
+    color: #ac9a5f;
 }
 
 /* Menu responsivo em cascata para dispositivos móveis */
@@ -99,18 +99,74 @@ section {
 
 .produto {
     display: inline-block;
-    background-color: #000000; /* Tom amadeirado */
-    padding: 20px;
-    margin: 10px;
-    border-radius: 8px;
+    background-color: #000000; /* Fundo escuro */
+    width: 300px;
+    border-radius: 10px;
+    overflow: hidden;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease;
+    margin-right: .5rem;
+    margin-left: .5rem;
 }
 
 .produto:hover {
     transform: scale(1.05);
     background-color: #8B5A2B; /* Destaca ao passar o mouse */
 }
+
+.produto .img-container {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.produto .img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Preenche o espaço sem distorcer */
+    display: block;
+}
+
+.produto .info {
+    padding: 15px;
+    color: white;
+}
+
+.produto .titulo {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.produto .descricao {
+    font-size: 14px;
+    color: #ccc;
+    margin-top: 5px;
+}
+
+.produto .preco {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.produto .botao {
+    background-color: #e65100;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 10px;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.produto .botao:hover {
+    background-color: #ff6d00;
+}
+
 
 button {
     background-color: #C04000; /* Vermelho queimado */
@@ -134,6 +190,12 @@ button:hover {
     padding: 10px;
     border-radius: 50%;
     cursor: pointer;
+}
+
+hr {
+    margin: 20px auto;
+    width: 50%;
+    color: #000000;
 }
 
 /* CARRINHO DE COMPRAS */
